@@ -34,19 +34,19 @@ FFmpeg provides broad input support, including common MP4, MKV, MOV, AVI, WebM, 
 
 The current Windows build uses the Windows .NET Framework compiler and WPF.
 
-1. Place matching `ffmpeg.exe` and `ffprobe.exe` files in `Windows/Grove Swift Video Converter/tools/`.
+1. Place matching `ffmpeg.exe` and `ffprobe.exe` files from the same FFmpeg build in `Windows/Grove Swift Video Converter/tools/`.
 2. Run `Windows/build.ps1` to compile the application.
-3. Run `Windows/release.ps1` to create the portable ZIP and MSI after placing the portable WiX 3.14 tools in `Windows/.tools/wix314/`.
+3. Run `Windows/release.ps1 -FFmpegSourceArchive <path>` to create the portable ZIP, MSI, checksums and matching FFmpeg source attachment after placing the portable WiX 3.14 tools in `Windows/.tools/wix314/`.
 
 FFmpeg and WiX binaries are intentionally excluded from this source repository.
 
 ## Downloads
 
-Public downloads will be published on the repository's **Releases** page after FFmpeg attribution and corresponding-source materials are finalized.
+Public downloads are published on the repository's **Releases** page.
 
 ## Third-party software
 
-Grove Swift Video Converter invokes FFmpeg and FFprobe as separate command-line programs. FFmpeg is a separate open-source project and is distributed under its applicable licence. This project is not affiliated with the FFmpeg project.
+Grove Swift Video Converter invokes FFmpeg and FFprobe as separate command-line programs. Release packages currently include the GPLv3 FFmpeg 9.0.1 essentials build from Gyan Doshi. Exact attribution, build information and source details are provided in [`Windows/THIRD-PARTY-NOTICES.txt`](Windows/THIRD-PARTY-NOTICES.txt). This project is not affiliated with the FFmpeg project.
 
 ## Licence
 

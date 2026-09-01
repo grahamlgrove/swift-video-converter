@@ -10,4 +10,6 @@ New-Item -ItemType Directory -Force -Path $releaseDir | Out-Null
 if ($LASTEXITCODE -ne 0) { throw 'Compilation failed.' }
 Copy-Item -Force -LiteralPath (Join-Path $projectDir 'README.txt') -Destination (Join-Path $releaseDir 'README.txt')
 Copy-Item -Force -LiteralPath (Join-Path $projectDir 'Assets\grove-swift-icon.ico') -Destination (Join-Path $releaseDir 'grove-swift-icon.ico')
+Copy-Item -Force -LiteralPath (Join-Path $projectDir 'THIRD-PARTY-NOTICES.txt') -Destination (Join-Path $releaseDir 'THIRD-PARTY-NOTICES.txt')
+Copy-Item -Force -Recurse -LiteralPath (Join-Path $projectDir 'Licenses') -Destination $releaseDir
 Write-Host "Built: $releaseDir\GroveSwiftVideoConverter.exe"

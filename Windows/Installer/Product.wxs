@@ -8,6 +8,7 @@
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="Grove Swift Video Converter">
           <Directory Id="TOOLSFOLDER" Name="tools" />
+          <Directory Id="LICENSESFOLDER" Name="Licenses" />
         </Directory>
       </Directory>
       <Directory Id="ProgramMenuFolder"><Directory Id="ApplicationProgramsFolder" Name="Grove Swift Video Converter" /></Directory>
@@ -17,6 +18,13 @@
         <File Id="ApplicationExe" Source="$(var.SourceDir)\GroveSwiftVideoConverter.exe" KeyPath="yes" />
         <File Id="ReadmeFile" Source="$(var.SourceDir)\README.txt" />
         <File Id="ApplicationIconFile" Source="$(var.SourceDir)\grove-swift-icon.ico" />
+        <File Id="ThirdPartyNoticesFile" Source="$(var.SourceDir)\THIRD-PARTY-NOTICES.txt" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="LICENSESFOLDER">
+      <Component Id="FFmpegLicenses" Guid="770A43C0-EB6A-4D38-A1BE-9F0D96230A57">
+        <File Id="FFmpegLicenseFile" Source="$(var.SourceDir)\Licenses\FFmpeg-GPLv3.txt" KeyPath="yes" />
+        <File Id="FFmpegBuildReadmeFile" Source="$(var.SourceDir)\Licenses\FFmpeg-Build-README.txt" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="TOOLSFOLDER">
@@ -33,7 +41,7 @@
       </Component>
     </DirectoryRef>
     <Feature Id="ProductFeature" Title="Grove Swift Video Converter" Level="1">
-      <ComponentRef Id="MainApplication" /><ComponentRef Id="FFmpegTools" /><ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="MainApplication" /><ComponentRef Id="FFmpegTools" /><ComponentRef Id="FFmpegLicenses" /><ComponentRef Id="ApplicationShortcut" />
     </Feature>
     <Icon Id="GroveSwiftIcon.ico" SourceFile="$(var.SourceDir)\grove-swift-icon.ico" />
     <Property Id="ARPPRODUCTICON" Value="GroveSwiftIcon.ico" />

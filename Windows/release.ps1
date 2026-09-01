@@ -1,4 +1,7 @@
-param([string]$Version = '0.1.0')
+param(
+    [string]$Version = '0.1.0',
+    [string]$FFmpegSourceArchive = ''
+)
 $ErrorActionPreference = 'Stop'
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $portableDir = Join-Path $projectDir 'Grove Swift Video Converter'
@@ -23,7 +26,14 @@ if ($LASTEXITCODE -ne 0) { throw 'WiX compilation failed.' }
 if ($LASTEXITCODE -ne 0) { throw 'MSI creation failed.' }
 Remove-Item -Force -LiteralPath $wixObject
 
-$hashes = Get-FileHash -Algorithm SHA256 -LiteralPath $zip,$msi
+$hashTargets = @($zip, $msi)
+if ($FFmpegSourceArchive) {
+    if (-not (Test-Path -LiteralPath $FFmpegSourceArchive)) { throw "FFmpeg source archive not found: $FFmpegSourceArchive" }
+    $sourceDestination = Join-Path $releaseDir "ffmpeg-9.0.1-source-bf1b838f2a.zip"
+    Copy-Item -Force -LiteralPath $FFmpegSourceArchive -Destination $sourceDestination
+    $hashTargets += $sourceDestination
+}
+$hashes = Get-FileHash -Algorithm SHA256 -LiteralPath $hashTargets
 $hashLines = $hashes | ForEach-Object { "$($_.Hash.ToLowerInvariant())  $(Split-Path -Leaf $_.Path)" }
 Set-Content -LiteralPath (Join-Path $releaseDir 'SHA256SUMS.txt') -Value $hashLines -Encoding ascii
 Write-Host "Release created in $releaseDir"

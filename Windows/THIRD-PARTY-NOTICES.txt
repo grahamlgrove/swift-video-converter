@@ -1,0 +1,24 @@
+THIRD-PARTY SOFTWARE NOTICES
+============================
+
+Grove Swift Video Converter is distributed under the MIT License.
+
+FFmpeg
+------
+This package includes the separate command-line programs ffmpeg.exe and
+ffprobe.exe from FFmpeg 9.0.1. They are invoked as external processes and may
+be replaced with compatible builds.
+
+Windows build: ffmpeg-9.0.1-essentials_build-www.gyan.dev
+Build provider: Gyan Doshi, https://www.gyan.dev/ffmpeg/builds/
+FFmpeg source revision: bf1b838f2a
+Source: https://github.com/FFmpeg/FFmpeg/commit/bf1b838f2a
+Binary package SHA-256:
+fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9
+
+This FFmpeg build is licensed under the GNU General Public License version 3.
+See Licenses\FFmpeg-GPLv3.txt. Build configuration and bundled-library version
+details are in Licenses\FFmpeg-Build-README.txt.
+
+The corresponding FFmpeg source archive is supplied alongside the application
+downloads in the Grove Swift Video Converter GitHub release.
