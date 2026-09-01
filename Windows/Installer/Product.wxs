@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Grove Swift Video Converter" Language="1033" Version="0.1.0" Manufacturer="Graham Grove" UpgradeCode="F098A1F7-7127-49CA-9D78-1BA2B9E29761">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Description="Grove Swift Video Converter" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Grove Swift Video Converter is already installed." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Grove Swift Video Converter">
+          <Directory Id="TOOLSFOLDER" Name="tools" />
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder"><Directory Id="ApplicationProgramsFolder" Name="Grove Swift Video Converter" /></Directory>
+    </Directory>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="MainApplication" Guid="C96B2C24-9F32-42D7-8438-46AA8E11DE70">
+        <File Id="ApplicationExe" Source="$(var.SourceDir)\GroveSwiftVideoConverter.exe" KeyPath="yes" />
+        <File Id="ReadmeFile" Source="$(var.SourceDir)\README.txt" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="TOOLSFOLDER">
+      <Component Id="FFmpegTools" Guid="AFBDF6CB-6C67-4E90-AF53-2AE54E41FCB5">
+        <File Id="FFmpegExe" Source="$(var.SourceDir)\tools\ffmpeg.exe" KeyPath="yes" />
+        <File Id="FFprobeExe" Source="$(var.SourceDir)\tools\ffprobe.exe" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="B2A2C334-4C3C-4698-B85D-77D9C2DC7E1C">
+        <Shortcut Id="StartMenuShortcut" Name="Grove Swift Video Converter" Description="Convert, trim and crop video files" Target="[INSTALLFOLDER]GroveSwiftVideoConverter.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKLM" Key="Software\Graham Grove\Grove Swift Video Converter" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <Feature Id="ProductFeature" Title="Grove Swift Video Converter" Level="1">
+      <ComponentRef Id="MainApplication" /><ComponentRef Id="FFmpegTools" /><ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+  </Product>
+</Wix>

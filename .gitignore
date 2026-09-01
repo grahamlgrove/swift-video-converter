@@ -1,0 +1,31 @@
+# Compiled application and release artifacts
+Windows/Grove Swift Video Converter/
+Windows/Release/
+*.exe
+*.msi
+*.zip
+*.wixobj
+*.wixpdb
+*.cab
+
+# Downloaded build tools and bundled third-party binaries
+Windows/.tools/
+**/tools/ffmpeg.exe
+**/tools/ffprobe.exe
+
+# Visual Studio and .NET output
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Temporary files and logs
+*.tmp
+*.building
+*.log
+conversion-error.txt
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
