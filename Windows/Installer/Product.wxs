@@ -16,6 +16,7 @@
       <Component Id="MainApplication" Guid="C96B2C24-9F32-42D7-8438-46AA8E11DE70">
         <File Id="ApplicationExe" Source="$(var.SourceDir)\GroveSwiftVideoConverter.exe" KeyPath="yes" />
         <File Id="ReadmeFile" Source="$(var.SourceDir)\README.txt" />
+        <File Id="ApplicationIconFile" Source="$(var.SourceDir)\grove-swift-icon.ico" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="TOOLSFOLDER">
@@ -34,5 +35,7 @@
     <Feature Id="ProductFeature" Title="Grove Swift Video Converter" Level="1">
       <ComponentRef Id="MainApplication" /><ComponentRef Id="FFmpegTools" /><ComponentRef Id="ApplicationShortcut" />
     </Feature>
+    <Icon Id="GroveSwiftIcon.ico" SourceFile="$(var.SourceDir)\grove-swift-icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="GroveSwiftIcon.ico" />
   </Product>
 </Wix>

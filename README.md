@@ -4,6 +4,8 @@ A free, portable video converter powered by FFmpeg, featuring drag-and-drop conv
 
 > **Current status:** Windows pre-release. A macOS edition is planned.
 
+![Grove Swift Video Converter icon](Windows/Assets/grove-swift-icon.png)
+
 ## Features
 
 - Drag and drop multiple videos into a conversion queue
