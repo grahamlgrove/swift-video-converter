@@ -285,12 +285,18 @@ namespace PortableVideoConverter
 
         void ShowAbout()
         {
-            string text = "Grove Swift Video Converter\nVersion 1.0.0\n\n" +
-                "A free, portable video converter with format conversion, quality presets, precision trimming, visual cropping and batch processing.\n\n" +
-                "Created by Graham Grove.\n\n" +
-                "Powered by FFmpeg. FFmpeg is a separate open-source project distributed under its applicable GPL licence. Grove Swift Video Converter is not affiliated with the FFmpeg project.\n\n" +
-                "Copyright © 2026 Graham Grove";
-            MessageBox.Show(this, text, "About Grove Swift Video Converter", MessageBoxButton.OK, MessageBoxImage.Information);
+            Window about = new Window { Title = "About Grove Swift Video Converter", Owner = this, Width = 520, Height = 545, ResizeMode = ResizeMode.NoResize, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = new SolidColorBrush(Color.FromRgb(28, 31, 38)), ShowInTaskbar = false };
+            StackPanel panel = new StackPanel { Margin = new Thickness(28) };
+            TextBlock title = new TextBlock { Text = "Grove Swift Video Converter", FontSize = 23, FontWeight = FontWeights.Bold, Foreground = Brushes.White, TextAlignment = TextAlignment.Center };
+            TextBlock version = new TextBlock { Text = "Version 1.0.0", FontSize = 13, Foreground = new SolidColorBrush(Color.FromRgb(160, 170, 185)), Margin = new Thickness(0, 5, 0, 22), TextAlignment = TextAlignment.Center };
+            TextBlock description = new TextBlock { Text = "A free, portable video converter with format conversion, quality presets, precision trimming, visual cropping and batch processing.", TextWrapping = TextWrapping.Wrap, Foreground = Brushes.White, FontSize = 14, LineHeight = 21 };
+            TextBlock support = new TextBlock { Text = "Grove Swift Video Converter is developed and maintained by Graham Grove as a personal hobby project.\n\nIf you find it useful, you’re welcome to help support the development of this and my other free apps and educational wikis.", TextWrapping = TextWrapping.Wrap, Foreground = Brushes.White, FontSize = 14, LineHeight = 21, Margin = new Thickness(0, 18, 0, 14) };
+            Button coffee = Btn("☕  Buy me a coffee", 180); coffee.HorizontalAlignment = HorizontalAlignment.Center; coffee.Height = 38; coffee.Background = new SolidColorBrush(Color.FromRgb(255, 94, 91)); coffee.Click += delegate { try { Process.Start(new ProcessStartInfo("https://ko-fi.com/groveapps") { UseShellExecute = true }); } catch { MessageBox.Show(about, "Unable to open the web browser.", "Grove Swift Video Converter", MessageBoxButton.OK, MessageBoxImage.Warning); } };
+            TextBlock optional = new TextBlock { Text = "Support is entirely optional and does not purchase additional features or services. Contributions are not tax deductible.", TextWrapping = TextWrapping.Wrap, Foreground = new SolidColorBrush(Color.FromRgb(190, 197, 208)), FontSize = 12, LineHeight = 18, Margin = new Thickness(0, 14, 0, 15), TextAlignment = TextAlignment.Center };
+            TextBlock ffmpeg = new TextBlock { Text = "Powered by FFmpeg, a separate open-source project distributed under its applicable GPL licence. This application is not affiliated with the FFmpeg project.\n\nCopyright © 2026 Graham Grove", TextWrapping = TextWrapping.Wrap, Foreground = new SolidColorBrush(Color.FromRgb(160, 170, 185)), FontSize = 11, LineHeight = 16, TextAlignment = TextAlignment.Center };
+            Button close = Btn("Close", 90); close.HorizontalAlignment = HorizontalAlignment.Center; close.Margin = new Thickness(0, 18, 0, 0); close.Click += delegate { about.Close(); };
+            panel.Children.Add(title); panel.Children.Add(version); panel.Children.Add(description); panel.Children.Add(support); panel.Children.Add(coffee); panel.Children.Add(optional); panel.Children.Add(ffmpeg); panel.Children.Add(close);
+            about.Content = panel; about.ShowDialog();
         }
 
         void OpenFiles()
