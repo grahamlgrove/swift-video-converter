@@ -285,7 +285,7 @@ namespace PortableVideoConverter
 
         void ShowAbout()
         {
-            Window about = new Window { Title = "About Grove Swift Video Converter", Owner = this, Width = 520, Height = 545, ResizeMode = ResizeMode.NoResize, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = new SolidColorBrush(Color.FromRgb(28, 31, 38)), ShowInTaskbar = false };
+            Window about = new Window { Title = "About Grove Swift Video Converter", Owner = this, Width = 520, Height = 590, ResizeMode = ResizeMode.NoResize, WindowStartupLocation = WindowStartupLocation.CenterOwner, Background = new SolidColorBrush(Color.FromRgb(28, 31, 38)), ShowInTaskbar = false };
             StackPanel panel = new StackPanel { Margin = new Thickness(28) };
             TextBlock title = new TextBlock { Text = "Grove Swift Video Converter", FontSize = 23, FontWeight = FontWeights.Bold, Foreground = Brushes.White, TextAlignment = TextAlignment.Center };
             TextBlock version = new TextBlock { Text = "Version 1.0.0", FontSize = 13, Foreground = new SolidColorBrush(Color.FromRgb(160, 170, 185)), Margin = new Thickness(0, 5, 0, 22), TextAlignment = TextAlignment.Center };
