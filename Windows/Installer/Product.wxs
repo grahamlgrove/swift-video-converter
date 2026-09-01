@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="Grove Swift Video Converter" Language="1033" Version="0.1.0" Manufacturer="Graham Grove" UpgradeCode="F098A1F7-7127-49CA-9D78-1BA2B9E29761">
+  <Product Id="*" Name="Grove Swift Video Converter" Language="1033" Version="1.0.0" Manufacturer="Graham Grove" UpgradeCode="F098A1F7-7127-49CA-9D78-1BA2B9E29761">
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Description="Grove Swift Video Converter" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of Grove Swift Video Converter is already installed." />
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />

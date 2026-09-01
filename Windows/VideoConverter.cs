@@ -20,8 +20,8 @@ using Forms = System.Windows.Forms;
 [assembly: System.Reflection.AssemblyCompany("Graham Grove")]
 [assembly: System.Reflection.AssemblyProduct("Grove Swift Video Converter")]
 [assembly: System.Reflection.AssemblyCopyright("Copyright © 2026 Graham Grove")]
-[assembly: System.Reflection.AssemblyVersion("0.1.0.0")]
-[assembly: System.Reflection.AssemblyFileVersion("0.1.0.0")]
+[assembly: System.Reflection.AssemblyVersion("1.0.0.0")]
+[assembly: System.Reflection.AssemblyFileVersion("1.0.0.0")]
 
 namespace PortableVideoConverter
 {
@@ -285,7 +285,7 @@ namespace PortableVideoConverter
 
         void ShowAbout()
         {
-            string text = "Grove Swift Video Converter\nVersion 0.1.0\n\n" +
+            string text = "Grove Swift Video Converter\nVersion 1.0.0\n\n" +
                 "A free, portable video converter with format conversion, quality presets, precision trimming, visual cropping and batch processing.\n\n" +
                 "Created by Graham Grove.\n\n" +
                 "Powered by FFmpeg. FFmpeg is a separate open-source project distributed under its applicable GPL licence. Grove Swift Video Converter is not affiliated with the FFmpeg project.\n\n" +

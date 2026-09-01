@@ -2,7 +2,7 @@
 
 A free, portable video converter powered by FFmpeg, featuring drag-and-drop conversion, quality presets, precision trimming, visual cropping, batch processing and broad format support.
 
-> **Current status:** Windows pre-release. A macOS edition is planned.
+> **Current release:** Version 1.0.0 for Windows. A macOS edition is planned.
 
 ![Grove Swift Video Converter icon](Windows/Assets/grove-swift-icon.png)
 
