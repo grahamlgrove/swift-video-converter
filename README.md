@@ -42,7 +42,7 @@ FFmpeg and WiX binaries are intentionally excluded from this source repository.
 
 ## Downloads
 
-Public downloads are published on the repository's **Releases** page.
+Public downloads are published on the repository's **Releases** page - https://github.com/grahamlgrove/swift-video-converter/releases/latest.
 
 ## Third-party software
 
