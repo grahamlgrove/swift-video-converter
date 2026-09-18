@@ -53,3 +53,9 @@ Grove Swift Video Converter invokes FFmpeg and FFprobe as separate command-line 
 Grove Swift Video Converter is available under the [MIT License](LICENSE).
 
 FFmpeg and other third-party components remain subject to their own licences.
+
+## Support
+
+Grove Swift Video Converter is developed and maintained as a personal hobby project. If you find it useful, you’re welcome to [[buy me a coffee](https://ko-fi.com/groveapps)](https://ko-fi.com/groveapps) and help support this and my other free apps and educational wikis.
+
+Support is entirely optional and does not purchase additional features or services. Contributions are not tax deductible.
